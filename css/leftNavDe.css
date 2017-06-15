@@ -1,0 +1,27 @@
+.ui-left-nav-de{
+    width: 8.33333rem;
+    background: #f1f5f8;
+    height: 100%;
+    position: fixed;
+    overflow: hidden;
+    z-index: 11;
+}
+.ui-left-nav-de ul{
+    width: 100%;
+    color: #666666;
+    padding-top: 6.11111rem;
+}
+.ui-left-nav-de li{
+    border-bottom: 1px solid #c7c7c7;
+}
+.ui-left-nav-de li:hover{
+    background-color: rgba(199,199,199,0.2);
+}
+.ui-left-nav-de li>div{
+    width: 3.33333rem;
+    margin: 0 auto;
+    padding: 1.66667rem 0;
+}
+.ui-left-nav-de li span{
+    display: inline-block;
+}

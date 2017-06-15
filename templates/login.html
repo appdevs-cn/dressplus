@@ -1,0 +1,36 @@
+<div class="ui-login-con">
+    <div class="ui-login-left">
+        <div class="ui-login-left-bg"></div>
+    </div>
+    <div class="ui-login-right">
+        <div class="ui-login-form">
+            <div class="ui-web-logo"> </div>
+            <div class="ui-web-input">
+                <span class="ui-user-icon ui-com-clearFix"></span>
+                <input data-event="blur>hideError" data-bind="args.account" type="text"/>
+            </div>
+            <div class="ui-web-input ui-com-clearFix">
+                <span class="ui-lock-icon"></span>
+                <input data-event="blur>hideError" data-bind="args.password" type="password"/>
+            </div>
+            <input type="text" data-event="blur>hideError" data-bind="getVerifyCode" class="getVerifyCode" placeholder="验证码"/>
+            <img class="getVerify"><div id="noclear" data-event="changecode">换一张</div>
+            <div class="ui-error-con" id="login_error_msg">
+                <span class="ui-error-icon"></span>
+                <span class="ui-error-text">请输入正确的用户名或密码或验证码</span>
+            </div>
+            <div data-event="resetpassword" class="clickgo">忘记密码</div>
+            <div data-event="login" class="ui-web-btn">登录</div>
+            <div data-event="register" class="clickgo" style="text-align:center;">立即注册</div>
+        </div>
+
+        <div class="ui-procol-des">
+            <p class="ui-order-h-des">
+                <span>用户协议</span>
+                <span>内容版权</span>
+            </p>
+            <p class="ui-order-l-des">Copyright @ 2017 Beijing Moshanghua Tech Co., Ltd. All rights reserved</p>
+        </div>
+    </div>
+
+</div>

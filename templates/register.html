@@ -1,0 +1,57 @@
+<div class="register-background">
+{if !this.registerSuccess}
+<div class="ui-register-con ui-default-con" {if this.registerResult}style="display: none"{/if}>    
+    <!--<div class="ui-login-form">-->
+    <div class="ui-login-form" style="margin-top:50px !important;">
+        <div class="ui-web-logo"> </div>
+        <div class="ui-register-input">
+            <div class="label">邮箱<span class="explain">邮箱作为注册账号的账户名称</span></div>
+            <input data-event="blur>hideError" data-bind="args.email" type="text"/>
+            <div class="label">电话号码</div>
+            <input data-event="blur>hideError" data-bind="args.tel" type="number"/>
+            <div class="label">公司名称<span class="explain">英文数字或汉字[3-20字符，不分大小写]</span></div>
+            <input data-event="blur>hideError" data-bind="args.companyName" type="text"/>
+            <div class="label">密码<span class="explain">英文、数字下划线[6-20位区分大小写]</span></div>
+            <input data-event="blur>hideError" data-bind="args.password" type="password"/>
+            <div class="label">验证码</div>
+            <input type="text" data-event="blur>hideError" data-bind="registerVerifyCode" id="registerVerifyCode" placeholder="验证码"/>
+            <img class="registerVerify"><div id="registernoclear">看不清？<span data-event="changecode">换一张</span></div>
+        </div>
+        <div class="ui-error-text"></div>
+        <div data-event="register" class="ui-web-btn">同意协议并注册</div>
+    </div>
+    <div style="text-align:center;color: #808080;">已经有账号了？<span data-event="login" class="at_once">立即登录</span></div>
+    <div class="ui-procol-des">
+        <p class="ui-order-h-des">
+            <span>用户协议</span>
+            <span>内容版权</span>
+        </p>
+        <p class="ui-order-l-des">Copyright @ 2017 Ltd.All rights reserved</p>
+    </div>
+</div>
+
+<!-- 激活的页面 -->
+<div class="ui-register-con ui-registerResult-con" {if !this.registerResult}style="display: none"{/if}>    
+    <h4>激活</h4>
+    <div>确认邮件已发送</div>
+    <div class="email"></div>
+    <div>请登录您的邮箱激活账号，完成注册</div>
+    <h5>没有收到邮件？</h5>
+    <div class="problem">
+        <div>1.请检查邮箱地址是否正确<span data-event="rewrite">重新填写</span></div>
+        <div>2.检查您的邮箱里的“垃圾邮件”分类</div>
+        <div>3.若仍未收到确认邮件，请尝试<span data-event="resend">重新发送</span></div>
+    </div>
+</div>
+{/if}
+
+<!-- 注册成功的提示 -->
+<div class="ui-register-con registerSuccess" {if !this.registerSuccess}style="display: none"{/if}>
+    <div id="activationsuccess"></div>
+    <div class="action">激活中</div>
+    <div class="content" style="display:none;">
+        <div><span id="endtime">5</span>秒后跳转到登录页</div>
+        <button data-event="login">立即登录</button>
+    </div>    
+</div>
+</div>

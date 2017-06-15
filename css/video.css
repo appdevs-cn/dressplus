@@ -1,0 +1,171 @@
+.ui-video-list li{
+    border-bottom: 1px solid #b3b3b3;
+}
+.ui-video-list li:hover{
+    background-color: #ecf1f5;
+    cursor: pointer;
+}
+.ui-video-con .ui-web-input{
+    display: inline-block;
+    margin-bottom: 0;
+    padding: 0.3rem;
+    vertical-align: middle;
+}
+
+.ui-video-list li{
+    font-size: 0;
+}
+
+.ui-video-list li:not(:first-child){
+    color: #666;
+}
+.ui-video-list li .ui-video-list-name{
+    color: #333;
+    font-size: 1.22222rem;
+}
+
+.ui-video-list li>span{
+    font-size: 1rem;
+    text-align: center;
+    display: inline-block;
+    line-height: 3.33333rem;
+}
+.ui-video-list li:first-child>span{
+    line-height: 4rem;
+}
+.ui-video-list li:first-child{
+    font-weight: 600;
+
+}
+
+.ui-del-btn-icon{
+    background: url(../images/del_btn_icon.png) no-repeat 0 0.9rem;
+    width: 1.33333rem;
+    height: 2rem;
+    display: inline-block;
+    background-size: 85%;
+    vertical-align: text-bottom;
+}
+.ui-video-list li:first-child>span{
+    font-size: 1.22222rem;
+}
+.ui-video-list li>span:nth-child(2){
+    width: 22%;
+    text-align: left;
+    text-indent: 1em;
+}
+.ui-video-list li>span:nth-child(3){
+    width: 20%;
+}
+.ui-video-list li>span:nth-child(4){
+    width: 13%;
+}
+.ui-video-list li>span:nth-child(5){
+    width: 13%;
+}
+.ui-video-list li>span:nth-child(6){
+    width: 13%;
+}
+.ui-video-list li>span:nth-child(7){
+    width: 15%;
+}
+.ui-video-list li.ui-no-search-li{
+    height: 3.33333rem;
+    line-height: 3.33333rem;
+    text-align: center;
+    font-size: 0.77778rem;
+}
+.ui-web-checkbox{
+    width: 1.38889rem;
+    position: relative;
+    display: inline-block;
+    top: -0.83333rem;
+}
+.ui-web-checkbox.on label{
+    background: #0099ff;
+}
+.ui-web-checkbox label {
+    cursor: pointer;
+    position: absolute;
+    width: 1.11111rem;
+    height: 1.11111rem;
+    top: 0;
+    left: 0;
+    background: #fff;
+    border:1px solid #ddd;
+}
+.ui-web-checkbox label:hover::after {
+    opacity: 0.5;
+}
+.ui-web-checkbox input[type=checkbox]:checked + label:after {
+    opacity: 1;
+
+}
+.ui-web-checkbox label:after {
+    opacity: 0.2;
+    content: '';
+    position: absolute;
+    width: 0.5rem;
+    height: 0.27778rem;
+    background: transparent;
+    top: 0.22222rem;
+    left: 0.22222rem;
+    border: 0.11111rem solid #fff;
+    border-top: none;
+    border-right: none;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.ui-video-control span{
+    display: inline-block;
+}
+.ui-video-control>span:first-child{
+    border-right: 1px solid #adadad;
+}
+.ui-video-control>span{
+    padding:0 1.31111rem;
+    cursor: pointer;
+}
+
+.ui-look-off-icon{
+    background: url("../images/look_off_icon.png") no-repeat center;
+}
+.ui-look-on-icon{
+    background: url("../images/look_on_icon.png") no-repeat center;
+}
+.ui-upload-off-icon{
+    background: url("../images/upload_off_icon.png") no-repeat center;
+}
+.ui-upload-on-icon{
+    background: url("../images/upload_on_icon.png") no-repeat center;
+}
+.ui-look-off-icon,.ui-look-on-icon,.ui-upload-off-icon,.ui-upload-on-icon{
+    width: 1.22222rem;
+    height: 2rem;
+    vertical-align: middle;
+    position: relative;
+    background-size: 72%;
+}
+.ui-upload-on-icon a{
+    position: absolute;
+    opacity: 1;
+    width: 2.44444rem;
+    height: 1.11111rem;
+}
+.ui-upload-btn{
+    position: absolute;
+    width: 6.66667rem;
+    left: 0;
+    height: 2.22222rem;
+    opacity: 0;
+}
+.ui-video-list-name{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: bottom;
+}

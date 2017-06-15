@@ -1,0 +1,23 @@
+{
+  "name": "dress",
+  "version": "0.0.2",
+  "devDependencies": {
+    "qiniu-js": "^1.0.14-beta",
+    "seek-cli": "latest",
+    "seekjs": "^1.2.6"
+  },
+  "dependencies": {
+    "apn": "^1.7.8",
+    "ifun": "0.0.9",
+    "moment": "^2.18.1"
+  },
+  "scripts": {
+    "init": "node ./build/init.js",
+    "taobao": "npm install --regristry=https://registry.npm.taobao.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/huyuqiong/DRESS.git"
+  },
+  "license": "MIT"
+}

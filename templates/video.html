@@ -1,0 +1,85 @@
+<div class="ui-video-con ui-content-con">
+    <div class="ui-content-header ui-video-header ui-com-clearFix">
+        <span class="ui-content-header-txt">全部视频</span>
+        <div id="container" class="ui-relative-right">
+            <span id="pickfiles" class="ui-web-btn-mid ui-com-relative">
+                上传
+                <!--<input id="uploadFile" data-event="change>upload" class="ui-upload-btn" multiple type="file">-->
+            </span>
+            <div class="ui-web-input ui-com-clearFix">
+                <span class="ui-search-icon"></span>
+                <input id="searchInput" placeholder="输入视频名称" data-bind="args.serachString" type="text"/>
+                <span class="ui-clearBtn" data-event="clearSearch">×</span>
+            </div>
+            <div data-enter="search"></div>
+        </div>
+    </div>
+    <div data-part="listPart">
+    <p id="time"></p>
+    <ul class="ui-video-list">
+        {if this.videoList.length>0}
+        <li>
+            <div class="ui-web-checkbox">
+                <input data-event="click>selectAll" type="checkbox" id="checkboxInput"/>
+                <label for="checkboxInput"></label>
+            </div>
+            <span>名称</span>
+            <span>上传时间</span>
+            <span>大小</span>
+            <span>标签数</span>
+            <span>状态</span>
+            <span>操作</span>
+        </li>
+        {foreach src=this.videoList}
+        <% var index=Number(i+1);%>
+        <li>
+            <div class="ui-web-checkbox">
+                <input data-event="click>selectSingle:{item.id}" type="checkbox" name="checkboxInput" id="checkboxInput{index}"/>
+                <label for="checkboxInput{index}"></label>
+            </div>
+            <span class="ui-video-list-name">{item.name}</span>
+            <span>{item.uploadTime}</span>
+            <span>{item.videoSize}MB</span>
+            <span>{if item.tagNums==0}---{else}{item.tagNums}{/if}</span>
+
+            {if item.status=="200"}
+            <span>分析完成</span>
+            <span class="ui-video-control">
+                <span data-event="go:detail/video/{item.id}" class="ui-look-on-icon"></span>
+                <span data-event="downloadJSON:{item.jsonHref}" class="ui-upload-on-icon"></span>
+            </span>
+            {elsif item.status=="100"}
+            <span class="ui-orange-txt"> 正在分析</span>
+            <span class="ui-video-control">
+                <span class="ui-look-off-icon"></span>
+                <span class="ui-upload-off-icon"></span>
+            </span>
+            {/if}
+
+        </li>
+        {/foreach}
+        {else}
+        <li>
+            <span></span>
+            <span>名称</span>
+            <span>上传时间</span>
+            <span>大小</span>
+            <span>标签数</span>
+            <span>状态</span>
+            <span>操作</span>
+        </li>
+        <li class="ui-no-search-li">
+            没有文件！
+        </li>
+        {/if}
+    </ul>
+    <div style="display: none" data-event="delVideo" class="ui-web-del-btn ui-floatL">
+        <span class="ui-del-btn-icon"></span>
+        <span>删除</span>
+
+    </div>
+    {if this.lists.page_count>1}
+    <div class="ui-floatR" data-view="page"></div>
+    {/if}
+    </div>
+</div>

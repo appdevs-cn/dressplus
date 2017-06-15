@@ -1,0 +1,156 @@
+<div class="ui-detail-con ui-videoDetail-con">
+    <div class="ui-detail-header">
+        <div class="ui-web-back-con" data-event="go:list/video">
+            <span class="ui-web-back-icon"></span>
+            <span class="ui-content-header-txt">返回列表</span>
+        </div>
+    </div>
+    <div class="ui-video-detail ui-com-clearFix">
+        <div class="ui-video-detail-video-con ui-com-clearFix">
+        <div class="ui-video-detail-video">
+            <video id="videoDom" height="auto" class="video-js vjs-default-skin vjs-big-play-centered"
+                   controls preload="auto">
+                {if navigator.userAgent.indexOf("Firefox") > -1}
+                <source src="{this.videoInfo.videoUrl}"  type="video/mp4"/>
+                {else}
+                <source src="{this.videoInfo.videoUrl}"  type="video/ogg"/>
+                {/if}
+                您的浏览器不支持 HTML5 video 标签。
+            </video>
+            <div></div>
+                <div data-part="videoMask" class="ui-video-mask">
+
+                 </div>
+
+            <div data-part="senceMaskPart" class="ui-sence-mask">
+                <p>场景 {this.senceMask.name}</p>
+            </div>
+        </div>
+        </div>
+        <div class="ui-video-detail-info">
+            <div data-part="videoInfoPart" class="ui-video-detail-face">
+                <p class="ui-video-name">{this.videoInfo.name}</p>
+                <p>上传时间：{this.videoInfo.uploadTime} </p>
+                <p>视频长度：{this.videoInfo.duration}</p>
+                <p>文件大小：{this.videoInfo.size}MB</p>
+            </div>
+            <div class="ui-video-detail-depth">
+                <p>
+                    <span class="ui-web-tings-icon"></span>
+                    <span class="ui-statics-txt">物体</span>
+                    <span class="ui-web-count">{this.videoInfo.objectTagNums}</span>
+                </p>
+                <p>
+                    <span class="ui-web-place-icon"></span>
+                    <span class="ui-statics-txt">场景</span>
+                    <span class="ui-web-count">{this.videoInfo.sceneTagNums}</span>
+                </p>
+                <p>
+                    <span class="ui-web-people-icon"></span>
+                    <span class="ui-statics-txt">明星</span>
+                    <span class="ui-web-count">{this.videoInfo.starTagNums}</span>
+                </p>
+            </div>
+            <div data-event="downloadJSON:{this.videoInfo.jsonUrl}" class="ui-web-pad-btn">下载JSON</div>
+        </div>
+    </div>
+    <div class="ui-statics-form ui-com-clearFix ui-con-fw">
+        <div class="ui-statics-form-con ui-floatR">
+            <div>
+                <span class="ui-time-tip">持续时间:</span>
+                <div data-part="rangePart" class="ui-range-con">
+                    <input data-bind="args.rangeVal" data-event="change>timeSelect" name="money" type="range" min="0" max="20" step="1" id="range">
+                    <div class="ui-statics-controlRange" style="width:{this.rangeWidth};"></div>
+                    <div class="ui-range-tip">
+                        <span>0s</span>
+                        <span class="ui-orange-txt" style="left:{this.rangeWidth};">{if this.args.rangeVal>0&&this.args.rangeVal<20}{this.args.rangeVal}s{/if}</span>
+                        <span>20s+</span>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-web-input ui-com-clearFix">
+                <span class="ui-search-icon"></span>
+                <input placeholder="输入标签" id="searchInput" data-bind="args.serachString" type="text"/>
+                <span class="ui-clearBtn" data-event="clearSearch">×</span>
+            </div>
+            <div data-enter="search"></div>
+        </div>
+    </div>
+        <div data-part="tagListPart">
+            <%
+              var showS = false;
+               for(var t in this.searchResultList){
+                    showS = true;
+                }
+            %>
+            {if this.searchResultListStatus&&!showS}
+            <div class="ui-con-fw ui-statics-list-con">
+                <ul class="ui-statics-list">
+                    <li class="ui-no-search-li">
+                        无搜索结果！
+                    </li>
+                </ul>
+
+            </div>
+            {else}
+            <% var forTag = showS?this.searchResultList:this.videoInfo.tagInfo %>
+            {foreach src=forTag}
+            <% var _item = item %>
+            <div class="ui-con-fw ui-statics-list-con">
+                <div class="ui-statics-list-header ui-com-clearFix">
+                    <div class="ui-statics-list-header-txt">{i=="objects"?"物体":(i=="star"?"明星":"场景")}</div>
+                    <div data-event="showHideAllDetail" class="ui-detail-all-export">－</div>
+                </div>
+                <ul class="ui-statics-list">
+                    <li>
+                        <span>名称</span>
+                        <span>标签数</span>
+                        <span>时长</span>
+                        <span>
+                    广告机会
+                    <span class="ui-orange-txt">({_item.totalAdCount})</span>
+                </span>
+                    </li>
+                    {foreach src=_item.tagList}
+                    <% var _citem = item %>
+                    <li>
+                        <span>{_citem.tagName}</span>
+                        <span>
+                            {_citem.tagCount}
+                         <span data-event="showHideDetail" class="ui-detail-unexport-icon"></span>
+                        </span>
+                        <span>{_citem.duration}</span>
+                        <span>{_citem.adCount}</span>
+                        <div class="ui-list-item-detail">
+                            {if Array.isArray(_citem.tagPicList)}
+                            {foreach src=_citem.tagPicList}
+                            <%
+                                var _sitem = item;
+                                var imageUrl = _sitem.picUrl.match(/^http:/)?_sitem.picUrl:'http://'+_sitem.picUrl;
+                            %>
+                            <div>
+                                <img src="{imageUrl}">
+                                <p>开始时间 ／ {_sitem.startTime}</p>
+                                <p>持续时间 ／ <span class="ui-orange-txt">{_sitem.duration}</span></p>
+                            </div>
+                            {/foreach}
+                            {else}
+                            <div>
+                                <img src="{'http://'+_citem.tagPicList.picUrl}">
+                                <p>开始时间 ／ {_citem.tagPicList.startTime}</p>
+                                <p>持续时间 ／ <span class="ui-orange-txt">{_citem.tagPicList.duration}</span></p>
+                            </div>
+                            {/if}
+
+                        </div>
+                    </li>
+                    {/foreach}
+                </ul>
+            </div>
+            {/foreach}
+            {/if}
+        </div>
+
+</div>
+
+</div>

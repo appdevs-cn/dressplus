@@ -1,0 +1,159 @@
+.register-background{
+    width: 100%;
+    height: 100%;
+    background: url(../images/login_bg.png) no-repeat center;
+    background-size: 61.11111rem;
+}
+.ui-register-con {
+    width: 350px;
+    margin: 0 auto;
+    position: relative;
+}
+.ui-register-con .ui-web-logo {
+    width: 85%;
+    min-height: 9rem;
+    margin: 10px auto;
+}
+.ui-register-con .ui-login-form {
+    width: auto;
+}
+.ui-register-con .ui-error-text {
+    color: red;
+    position: absolute;
+}
+.ui-register-con .ui-web-btn {
+    background-color: #007cff;
+    height: 36px;
+    line-height: 36px;
+}
+.ui-register-input{
+    position: relative;
+}
+.ui-register-input input {
+    text-indent: 1em;
+    border: 1px solid #666;
+    margin: 12px 0;
+    height: 40px;
+    width: 100%;
+    -webkit-border-radius: 0.35714rem 0.35714rem 0.35714rem;
+    -moz-border-radius: 0.35714rem 0.35714rem 0.35714rem;
+    -o-border-radius: 0.35714rem 0.35714rem 0.35714rem;
+    -mso-border-radius: 0.35714rem 0.35714rem 0.35714rem;
+} 
+.ui-register-con .ui-web-btn {
+    width: 80%;
+    margin: 16px auto;
+}
+.ui-register-con .label {
+    font-size: 24px;
+    color: #333;
+}
+.ui-register-con .explain {
+    font-size: 14px;
+    color: #808080;
+    margin-left: 4px;
+}
+#registerVerifyCode {
+    width: 126px;
+    position: absolute;
+    left: 0;
+}
+#registernoclear {
+    position: absolute;
+    right: 0;
+    top: 403px;
+    color: #808080;
+}
+#registernoclear span {
+     color: #1874CD;
+     cursor: pointer;
+}
+.at_once {
+    color: #1874CD;
+    padding-left: 4px;
+    cursor: pointer;
+}
+.ui-register-con .ui-procol-des {
+    text-align: center;
+    line-height: 20px;
+    margin-top: 20px;
+}
+
+
+.ui-registerResult-con {
+    text-align: center;
+    width: 100%;
+    margin-top: 7%;
+    line-height: 24px;
+    font-family:"PingFang SC",Georgia,Serif;
+    color: #4d4d4d;
+    font-size: 30px;
+}
+.ui-registerResult-con h4 {
+    font-size: 44px;
+    margin-bottom: 80px;
+    font-weight: medium;
+}
+.ui-registerResult-con .email {
+    font-size: 42px;
+    color: #0080fc;
+    margin:35px;
+}
+.ui-registerResult-con h5 {
+    margin-top: 143px;
+    font-size: 30px;
+    font-weight: medium;
+    color: #4d4d4d;
+}
+.ui-registerResult-con .problem {
+    text-align: left;
+    margin-top: 40px;
+    display: inline-block;
+    font-size: 22px;
+    line-height: 44px;
+}
+.ui-registerResult-con .problem span {color: #1874CD;cursor: pointer;padding-left: 2px;}
+
+
+.registerSuccess {
+    margin-top: 17%;
+    text-align: center;
+    color: #4d4d4d;
+    font-size: 22px;
+}
+.registerSuccess .action {
+    font-size: 44px;
+    margin-bottom: 26px;
+}
+.registerSuccess .success_icon {
+    background: url(../images/success_icon.png) no-repeat top center;
+    background-size: 50px;
+    height: 74px;
+}
+.registerSuccess button {
+    line-height:50px;
+    height: 50px;
+    font-size: 22px;
+    -webkit-border-radius: 0.35714rem 0.35714rem 0.35714rem;
+    -moz-border-radius: 0.35714rem 0.35714rem 0.35714rem;
+    -o-border-radius: 0.35714rem 0.35714rem 0.35714rem;
+    -mso-border-radius: 0.35714rem 0.35714rem 0.35714rem;
+    background-color: #007cff;
+    color: #fff;
+    cursor: pointer;
+    width: 200px;
+    margin-top: 58px;
+}
+.registerVerify{
+    display: inline;
+    max-height: 3rem;
+    width: 26%;
+    margin: 15px 0px 15px 156px;
+}
+
+.ui-procol-des{
+    color: #b2b3b3;
+    font-size: 1rem;
+    width: 100%;
+    text-align: center;
+}

@@ -1,0 +1,144 @@
+
+.ui-video-detail{
+    width: 100%;
+    padding: 1.66667rem 0;
+    border-bottom: 1px solid #666;
+}
+.ui-video-detail-video{
+    position: relative;
+    margin: 0 auto;
+    width: 90%;
+}
+.ui-video-detail-video video{
+    width: 100%;
+}
+.ui-video-detail-video-con{
+    width:70%;
+    display: inline-block;
+}
+.ui-video-mask{
+    position: absolute;
+    width: 100%;
+    height: 92%;
+    top:0;
+    left: 0;
+    background: transparent;
+    display: none;
+}
+.ui-video-mask-range{
+    border: 0.16667rem solid rgba(255,255,255,0.9);
+    position: absolute;
+    z-index: 1;
+}
+.ui-video-mask-tip{
+    position: absolute;
+    top:-2.22222rem;
+}
+.ui-statics-form-con .ui-time-tip{
+    display: inline-block;
+    position: relative;
+    top: 0.55556rem;
+}
+.ui-video-mask-tip .ui-video-mask-txt{
+    background-color:rgba(255,204,0,0.9);
+    line-height: 1.38889rem;
+    color: #fff;
+    font-size: 0.88889rem;
+    padding: 0 0.53333rem;
+    -webkit-border-radius:0.16667rem 0.16667rem 0.16667rem;
+    -moz-border-radius: 0.16667rem 0.16667rem 0.16667rem;
+    -o-border-radius: 0.16667rem 0.16667rem 0.16667rem;
+    -mso-border-radius: 0.16667rem 0.16667rem 0.16667rem;
+    min-width: 2.77778rem;
+    text-align: center;
+}
+.ui-video-mask-tip .ui-video-mask-trangle{
+    width: 0px;
+    height:0px;
+    border-width: 0.44444rem;
+    border-style: solid;
+    border-color: rgba(255,204,0,0.9) transparent transparent transparent;
+    margin-left: 0.83333rem;
+}
+.ui-video-detail-info{
+    width: 25%;
+    display: inline-block;
+    font-size: 1rem;
+    margin-left: 2rem;
+    vertical-align: top;
+}
+.ui-video-detail-face{
+    border-bottom: 1px solid #0066cc;
+    color: #666;
+    padding: 1.11111rem 0;
+    padding-top: 0;
+}
+.ui-video-detail-face p {
+    line-height: 2.33333rem;
+}
+.ui-video-detail-depth{
+    border-bottom: 1px solid #0066cc;
+    padding: 1.11111rem 0;
+}
+.ui-video-detail-depth p{
+    line-height: 3.88889rem;
+    width: 12.22222rem;
+    margin: 0 auto;
+}
+.ui-video-detail-depth p>span{
+    width: 3.3rem;
+    display: inline-block;
+    vertical-align: middle;
+}
+.ui-video-detail-depth p>span.ui-statics-txt{
+    font-size: 1.33333rem;
+}
+.ui-web-count{
+    font-size: 1.11111rem;
+    color: #0099ff;
+}
+.ui-video-detail-depth p>span:first-child{
+    background-size: 60%;
+}
+.ui-video-name{
+    font-size: 1.3rem;
+    color: #333;
+    font-weight: 600;
+    word-break: break-all;
+}
+video{
+    margin: 0 auto;
+    display: inherit;
+}
+.ui-no-search-li{
+    height: 3.33333rem;
+    line-height: 3.33333rem;
+    text-align: center;
+    font-size: 0.77778rem;
+}
+.ui-videoDetail-con .ui-web-input{
+    display: inline-block;
+    margin-bottom: 0;
+    padding: 0.3rem;
+    vertical-align: middle;
+}
+.ui-sence-mask{
+    position: absolute;
+    z-index: 1;
+    top:0.5rem;
+    left: 0.5rem;
+    background-color:rgba(255,204,0,0.9);
+    line-height: 1.38889rem;
+    color: #fff;
+    font-size: 0.88889rem;
+    display: none;
+    padding: .3rem;
+    -webkit-border-radius:0.16667rem 0.16667rem 0.16667rem;
+    -moz-border-radius: 0.16667rem 0.16667rem 0.16667rem;
+    -o-border-radius: 0.16667rem 0.16667rem 0.16667rem;
+    -mso-border-radius: 0.16667rem 0.16667rem 0.16667rem;
+}
+video::-webkit-media-controls-enclosure {
+    /*禁用播放器控制栏的样式*/
+    z-index: 10 !important;
+}

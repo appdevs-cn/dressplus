@@ -1,0 +1,59 @@
+<div>
+    <div data-view="header"></div>
+    <div data-view="leftNav"></div>
+    {if this.page=="video"}
+    <div data-view="video"></div>
+    {elsif this.page=="statics"}
+    <div data-view="statics"></div>
+    {/if}
+    <div id="uploadFile-queue"></div>
+    <div data-part="statusPart">
+        {if this.status!="none"}
+        {if this.status=="uploading"}
+        <div class="ui-web-deal-state">
+            <div class="ui-web-deal-con ui-com-clearFix">
+                <div>
+                    <p>正在上传</p>
+                    <p class="ui-blue-txt">{this.video.hasUploadCount}/{this.video.totalUploadCount}</p>
+                </div>
+                <div data-event="showCloseUploadBox" class="ui-upload-ex-btn ui-export-btn">
+
+                </div>
+            </div>
+        </div>
+        <div class="ui-upload-box">
+            <div class="ui-upload-box-header">
+                <span data-event="closeUploadBox">╳</span>
+            </div>
+            <ul>
+                <li>
+                    <span>视频名称</span>
+                    <span>大小</span>
+                    <span>进度</span>
+                    <span>操作</span>
+                </li>
+                {foreach src=this.uploadCuList}
+                <li index="{i}">
+                    <span class="ui-upload-box-name">{item.name || item.video_name}</span>
+                    <span>{Math.round(item.size)}M</span>
+                    <span>
+                        <span class="ui-upload-box-process ui-upload-box-process-{i}">
+                            <span {if item.complete}style="width: 100%"{else}style="width: 0"{/if}></span>
+                        </span>
+                    <span class="ui-upload-process-val-{i}">{if item.complete}100%{else}0%{/if}</span>
+                    </span>
+                    {if !item.complete}
+                    <span class="ui-upload-box-stop ui-upload-box-stop-{i}"></span>
+                    {/if}
+                </li>
+                {/foreach}
+            </ul>
+        </div>
+        {elsif this.status=="success"}
+        <div class="ui-web-deal-state">
+            上传成功！
+        </div>
+        {/if}
+        {/if}
+    </div>
+</div>
