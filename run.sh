@@ -3,7 +3,7 @@
 old_pid=`ps -aux | grep 3000| grep node | awk '{print $2}'`
 
 if [ "${old_pid}" = '' ]; then
-    cd
+    cd /website/dress
     seek build test
     cp -R ./bower_components ./dist/bower_components
     nohup nobox start port=3000 env=test  >> /website/dress/logs/node.log  2>&1 &
